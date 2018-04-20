@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>CSS Patterns</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+
+  <!-- Exercise instructions:
+         1. Write CSS & HTML to create a label + input form component.
+            Style the component so that label/input are on the
+            right and left of a centered axis:
+                    label \ input \ (info)
+                    label \ input \ (info)
+                    label \ input \ (info)
+
+         2. Implement any design pattern to make each of the components more
+         easy to read/use.
+         For example: Each label should be bold. Each (info) should be in italics.
+         Note: Try creating your own pattern.
+
+         3. For each component, implement one of
+         the following CSS patterns:
+              a. OOCSS
+              b. BEM
+              c. SMACSS
+
+         4. Add a required (*) modifier to each of the components.
+
+         5. Compare/contrast each of these implementations. Which one
+            do you prefer?
+     -->
+
+  <!-- Write code here. -->
+  <div>
+    <form class="info" method="post">
+
+      <div class='info__row'>
+        <label class='info__label'>Name:</label>
+        <input class='info__input' type="text" name="name"><span class="info__span"> Input your name here </span>
+      </div>
+
+      <div class="info__row">
+        <label class="info__label">Email:</label>
+        <input type="info__input" name="email"><span class="info__span"> Input your email </span>
+      </div>
+
+      <div class="info__row">
+        <label class="info__label">Date:</label>
+        <input class="info__input" type="date" name="date"> <span class="info__span"> Input a valid date </span>
+      </div>
+
+      <button type="submit" class="btn btn-small btn-blue" value="Submit">Submit </button>
+
+    </form>
+  </div>
+</body>
+
+</html>

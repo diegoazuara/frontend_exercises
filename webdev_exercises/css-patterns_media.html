@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<meta charset="UTF-8">
+<title>CSS Patterns: Media Object</title>
+
+<!-- Required Metatags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<link rel="stylesheet" href="css/styles.css">
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+  <!-- Exercise instructions:
+
+     1. Create a media object with an image to the left or right of a block of text.
+     2. Write the CSS  with one of
+     the following CSS patterns:
+          a. OOCSS
+          b. BEM
+          c. SMACSS
+     3. Try and nest the media objects
+ -->
+
+  <!-- Write your code here -->
+
+  <div class="container-full">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar--purple">
+      <a class="navbar-brand navbar__logo" href="#">
+    <img src="img/logo.png" width="50" height="50" class="d-inline-block align-center" alt="">
+    CoolVideos
+  </a>
+      <button class="navbar-toggler navbar__button" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto navbar__ul justify-content-end">
+          <li class="nav-item navbar__li">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item navbar__li">
+            <a class="nav-link" href="#">Trending</a>
+          </li>
+          <li class="nav-item navbar__li">
+            <a class="nav-link" href="#">Upload</a>
+          </li>
+          <li class="nav-item navbar__li">
+            <button class="nav-link navbar__login" href="#" disabled>Log In</button>
+          </li>
+          <li class="nav-item navbar__li">
+            <button class="nav-link navbar__signup" href="#" disabled>Sign Out</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+        <video controls>
+          <source src="video/movie.mp4" type="video/mp4">
+        </video>
+        <h6 class="video__channel">Uploaded by 4K PLAY</h6>
+        <h5 class="video__title">Nature Video</h5>
+        <h6 class="video__views">534,179 views</h6>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 description">
+        <h5 class="video__description">Related Videos</h5>
+        <div class="media">
+          <div>
+            <img src="img/video_1.jpg" class="media-object relatedvideos__thumbnails">
+          </div>
+          <div class="media-body">
+            <span class="media-heading relatedvideos__title">Sundara Karma - Explore</span><br>
+            <span class="relatedvideos__channel">SundaraKarmaVEVO</span><br>
+            <span class="relatedvideos__views">45.7 k views</span>
+          </div>
+        </div>
+        <div class="media">
+          <div>
+            <img src="img/video_2.jpg" class="media-object relatedvideos__thumbnails">
+          </div>
+          <div class="media-body">
+            <span class="media-heading relatedvideos__title">Mountain River Water Sounds</span><br>
+            <span class="relatedvideos__channel">Relaxing White Noise </span><br>
+            <span class="relatedvideos__views">1.2 M views</span>
+          </div>
+        </div>
+        <div class="media">
+          <div>
+            <img src="img/video_3.jpg" class="media-object relatedvideos__thumbnails">
+          </div>
+          <div class="media-body">
+            <span class="media-heading relatedvideos__title">Nature Scenery Video</span><br>
+            <span class="relatedvideos__channel">LoungeVay Films</span><br>
+            <span class="relatedvideos__views">689 K views</span>
+          </div>
+        </div>
+        <div class="media">
+          <div>
+            <img src="img/video_4.jpg" class="media-object relatedvideos__thumbnails">
+          </div>
+          <div class="media-body">
+            <span class="media-heading relatedvideos__title">4K African Wildlife</span><br>
+            <span class="relatedvideos__channel">4K Relaxation Channel</span><br>
+            <span class="relatedvideos__views">5.3 M views</span>
+          </div>
+        </div>
+        <div class="media">
+          <div>
+            <img src="img/video_5.jpg" class="media-object relatedvideos__thumbnails">
+          </div>
+          <div class="media-body">
+            <span class="media-heading relatedvideos__title">4K Gorgeous Waterfalls </span><br>
+            <span class="relatedvideos__channel">4K Relaxation Channel</span><br>
+            <span class="relatedvideos__views">333 views</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row comments_section">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 ">
+        <h5>Comments</h5>
+        <div class="media">
+          <div class="media-left">
+            <img src="img/img_avatar1.png" class="media-object comments__picture" style="width:45px">
+          </div>
+          <div class="media-body comments__text">
+            <h6 class="media-heading comments__username"> Timothy Stark <small><i>1 day ago</i></small></h6>
+            <p>so beautiful mind blown, decided to use this video to test out my new internet! buffered so fast on 4K﻿</p>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            <img src="img/img_avatar2.png" class="media-object comments__picture" style="width:45px">
+          </div>
+          <div class="media-body comments__text">
+            <h6 class="media-heading comments__username">Rami Odeh <small><i>3 days ago</i></small></h6>
+            <p>OMFG AWESOME!!!!!!!!!!! </p>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            <img src="img/img_avatar3.png" class="media-object comments__picture" style="width:45px">
+          </div>
+          <div class="media-body comments__text">
+            <h6 class="media-heading comments__username">Hafeez Rehman
+ <small><i>2 months ago</i></small></h6>
+            <p>Watched this on my new galaxy s8 it is so sick﻿ </p>
+            <div class="media">
+              <div class="media-left">
+                <img src="img/img_avatar4.png" class="media-object comments__picture" style="width:45px">
+              </div>
+              <div class="media-body comments__text">
+                <h6 class="media-heading comments__username">
+Fokis Gaming
+ <small><i>3 days ago</i></small></h6>
+                <p>144p looks great on my gameboy!﻿ </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="media">
+          <div class="media-left">
+            <img src="img/img_avatar5.png" class="media-object comments__picture" style="width:45px">
+          </div>
+          <div class="media-body comments__text">
+            <h6 class="media-heading comments__username"> Devin Perez
+ <small><i>1 day ago</i></small></h6>
+            <p>Is it off that I can see this via a laptop Nivdia geforce 940mx no lag </p>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

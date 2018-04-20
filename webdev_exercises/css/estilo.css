@@ -1,0 +1,106 @@
+/*-------------- SMACSS --------------*/
+
+/*--- Base ---*/
+
+html, body, form {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+input {
+  border: 2px solid #999;
+  width: 200px;
+}
+
+label {
+  color: #000;
+}
+
+/*-------------- BEM --------------*/
+
+.info {
+  margin: auto;
+  padding-top: 100px;
+  height: 500px;
+  width: 560px;
+}
+
+.info__row {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.info__label {
+  color: #000;
+  font-weight: bold;
+  display: inline-block;
+  width: 50px;
+  padding-right: 10px;
+  text-align: right;
+}
+
+.info__input {
+  border: 2px solid #999;
+  width: 200px;
+}
+
+.info__span {
+  font-style: italic;
+  margin-left: 60px;
+  display: inline block;
+  margin-right: auto;
+}
+
+/*-------------- OOCSS --------------*/
+
+.btn {
+  margin-left: 185px;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  border: none;
+}
+
+/*--- Size  ---*/
+
+.btn-small {
+  font-size: 13px;
+  padding: 5px 20px;
+}
+
+.btn-medium {
+  font-size: 15px;
+  padding: 10px 20px;
+}
+
+.btn-large {}
+
+/*--- Color ---*/
+
+.btn-blue {
+  background: #468cfc;
+  color: white;
+}
+
+.btn-grey {
+  background: #1d1f23;
+  color: white;
+}
+
+.btn-dark-blue {}
+
+.btn-salmon {}
+
+.btn-orange {}
+
+.btn-mint {}
+
+.btn-pink {}
+
+.btn-purple {}
+
+.btn-yellow {}
+
+.btn-white {}
+
+​

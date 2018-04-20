@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>HTML Patterns: Structure / Layout </title>
+</head>
+
+<link rel="stylesheet" href="css/styles_2.css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans" rel="stylesheet">
+
+<body>
+
+  <!-- Exercise instructions:
+
+     1. Create a grid/table to visualize any info with details you want.
+        (can be image grids with info or titles, info grid at least 3 or 4 columns, or card views)
+
+     2. At the top of the table need a title
+
+     3. Import any font you want from fonts.google.com and create the following:
+      	- Font weights and sizes
+        - Implement primary and secondary colors (this can be applied to all the layout not just the font)
+
+     4. Create a button that hides the grid on click, and sets a message below title saying the following:
+        "CLick on the button again to show grid"
+        - Change button element states
+
+ -->
+  <div class="main">
+    <h1 class="title">GRID</h1>
+    <h2 id="message"></h2>
+    <div class="wrapper" id="grid">
+      <div class="box a color--primary">
+        <img class="box__image" src="img/img_1.png" alt="">
+        <span class="box__text"> EDIT </span>
+      </div>
+      <div class="box b color--darkblue">
+        <img class="box__image" src="img/img_2.png" alt="">
+        <span class="box__text"> MESSAGE </span>
+      </div>
+      <div class="box c color--primary">
+        <img class="box__image" src="img/img_3.png" alt="">
+        <span class="box__text"> SEARCH </span>
+      </div>
+
+      <div class="box d color--darkred">
+        <img class="box__image" src="img/img_4.png" alt="">
+        <span class="box__text"> SETTINGS </span>
+      </div>
+
+      <div class="box e color--primary">
+        <img class="box__image" src="img/img_5.png" alt="">
+        <span class="box__text"> GO </span>
+      </div>
+    </div>
+
+    <div class="bottom_section">
+      <button class="button color--darkblue" id="hide" type="button" name="button">Click Me</button>
+    </div>
+
+  </div>
+  </div>
+
+
+
+  <script src="scripts/script.js"></script>
+</body>
+
+</html>
