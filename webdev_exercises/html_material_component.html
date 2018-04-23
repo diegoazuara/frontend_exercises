@@ -31,6 +31,7 @@
      https://codepen.io/jsphstls/pen/yeRadY
      https://www.w3schools.com/howto/howto_js_form_steps.asp
      https://www.w3schools.com/howto/howto_custom_select.asp
+     https://applyweb.collegenet.com/account/new/create?origin=https%3A%2F%2Fwww.applyweb.com%2Fshibboleth%2Fgatekeeper%3Fdest%3Dhttps%253A%252F%252Fwww.applyweb.com%252Fmh%252F
 
 
 
@@ -49,33 +50,65 @@
           <span class="step"></span>
           <span class="step"></span>
         </div>
-        <h1 class="title">Create your account</h1>
-        <span class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
       </div>
       <div class="form-container">
-        <form id="form_1">
+        <form id="regForm">
           <!-- <input type="text" class="form__input" name="" placeholder="Name"> -->
-          <select class="form__input">
-            <option value="méxico">México</option>
-            <option value="united_states">United States</option>
-            <option value="canada">Canada</option>
-          </select>
-          <input type="email" class="form__input" name="" placeholder="Email">
-          <input type="password" class="form__input" name="" placeholder="Create your password">
-          <input type="password" class="form__input" name="" placeholder="Confirm your password">
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Create your account</h1>
+              <span class="description">Create your account to get started on your application.<br> For your password be sure to check the spelling and use of upper and lower case letters. </span>
+            </div>
+            <select class="form__input">
+              <option value="united_states">United States</option>
+              <option value="méxico">México</option>
+              <option value="canada">Canada</option>
+            </select>
+            <input type="email" class="form__input" name="" placeholder="Email">
+            <input type="password" class="form__input" name="" placeholder="Create your password">
+            <input type="password" class="form__input" name="" placeholder="Confirm your password">
+          </div>
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Personal Information</h1>
+              <span class="description">You must use your full legal name. Please do not use all capital letters. </span>
+            </div>
+            <input class="form__input" placeholder="First Name" oninput="this.className = ''" name="first_name">
+            <input class="form__input" placeholder="Last Name" oninput="this.className = ''" name="last_name">
+            <input type="date" class="form__input" placeholder="Date of Birth " name="date" onfocus="(this.type='date')" required>
+          </div>
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Address Information</h1>
+              <span class="description">If you’re using this account as a business you could use your business address. Please use a real address. </span>
+            </div>
+            <input class="form__input" placeholder="Street Address 1" name="street_address">
+            <input class="form__input" placeholder="Street Address 2" name="street_address">
+            <input class="form__input" placeholder="City" name="state">
+            <input class="form__input" placeholder="Zip" name="zip_code">
+          </div>
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Telephone Information</h1>
+              <span class="description">Thank you for your application! We will contact you by email, if we are not able to reach you we will contact you by your phone number. </span>
+            </div>
+            <input type="tel" class="form__input" placeholder="Phone Number" name="phone_number">
+
+          </div>
         </form>
-        <button type="button" class="button--primary" name="button">Sign Up</button>
+        <div class="">
+
+        </div>
+        <div class="buttons">
+          <button type="button" class="btn--secondary" id="prevBtn" onclick="nextPrev(-1)" name="button">Previous</button>
+          <button type="button" class="btn--primary" id="nextBtn" onclick="nextPrev(1)" name="button">Next</button>
+        </div>
+
       </div>
-
-
-
-
-
     </div>
-
-
   </div>
 
+  <script src="scripts/script_stepper.js"></script>
 </body>
 
 </html>
