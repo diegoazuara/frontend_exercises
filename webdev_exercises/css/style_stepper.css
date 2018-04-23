@@ -3,6 +3,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+.wrapper {
+  display: grid;
+}
+
 .color--primary {
   color: #0050e6;
 }
@@ -13,7 +17,9 @@ body {
 
 .title {}
 
-.description {}
+.description {
+  font-size: 1.1em;
+}
 
 .stepper-container {}
 
@@ -57,7 +63,7 @@ body {
   font-size: 1em;
   font-family: 'Lato', sans-serif;
   color: white;
-  border-radius: 25px;
+  border-radius: 22px;
   border: none;
   padding: 10px 15px;
   transition: background-color 0.3s ease;
@@ -94,19 +100,12 @@ input[type="date"]:valid:before {
   text-align: center;
   margin-top: 8%;
   width: 525px;
-  height: auto;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
-.stepper {}
-
-.step.active {
+.active {
   opacity: 1;
-}
-
-.step.finish {
-  background-color: #0050e6;
 }
 
 select {}
@@ -132,11 +131,17 @@ select {}
   outline: none;
 }
 
-.form__input:focus {
-  border-color: #0050e6;
+.invalid {
+  background-color: #ffdddd;
+  border: 1px solid #ff8080;
 }
 
-.form__input:hover {
+.finish {
+  background-color: #dcefdc;
+  border: 1px solid #73bf73;
+}
+
+.form__input:focus {
   border-color: #0050e6;
 }
 
