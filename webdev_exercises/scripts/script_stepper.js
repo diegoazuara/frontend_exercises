@@ -66,17 +66,9 @@ function validateForm() {
   y = x[currentTab].getElementsByClassName("form__input");
   z = document.getElementById('email').value;
 
-  console.log(z);
-
-  if (reg.test(z) == false) {
-    y[1].className += " invalid";
-    valid = false;
-  }
-
-  // Confirms password
+  // Validates password
 
   if (currentTab == 0) {
-
     if (document.getElementById('password').value.length < 8) {
       y[2].className += " invalid";
       valid = false;
@@ -105,6 +97,7 @@ function validateForm() {
     }
   }
 
+  // Validates email
   if (reg.test(z) == false) {
     y[1].className += " invalid";
     valid = false;
