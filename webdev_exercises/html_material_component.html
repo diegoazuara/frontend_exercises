@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <title>CSS Patterns: Media Object</title>
 
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style_stepper.css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
@@ -29,6 +30,7 @@
      https://material.io/color/#!/?view.left=0&view.right=1&primary.color=52c154&secondary.color=62148c
      https://codepen.io/jsphstls/pen/yeRadY
      https://www.w3schools.com/howto/howto_js_form_steps.asp
+     https://www.w3schools.com/howto/howto_custom_select.asp
 
 
 
@@ -41,12 +43,23 @@
 
     <div class="box">
       <div class="stepper-container">
-        <h1>Hola mundo</h1>
-        <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+        <div class="step_circles">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+        <h1 class="title">Create your account</h1>
+        <span class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
       </div>
       <div class="form-container">
         <form id="form_1">
-          <input type="text" class="form__input" name="" placeholder="Name">
+          <!-- <input type="text" class="form__input" name="" placeholder="Name"> -->
+          <select class="form__input">
+            <option value="méxico">México</option>
+            <option value="united_states">United States</option>
+            <option value="canada">Canada</option>
+          </select>
           <input type="email" class="form__input" name="" placeholder="Email">
           <input type="password" class="form__input" name="" placeholder="Create your password">
           <input type="password" class="form__input" name="" placeholder="Confirm your password">
