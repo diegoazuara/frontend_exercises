@@ -1,11 +1,86 @@
 body {
   background-color: #f1f4f7;
+  font-family: 'Lato', sans-serif;
+}
+
+.color--primary{
+color: #00aa8d;
+}
+
+.color--secondary{
+
+}
+
+.button--primary{
+background-color: #00aa8d;
+height: 44px;
+font-size: 1em;
+font-family: 'Lato', sans-serif;
+color: white;
+border-radius: 25px;
+border: none;
+padding: 10px 15px;
+transition: background-color 0.3s ease;
+outline: none;
+}
+
+.button--primary:hover{
+  background-color: #00806a;
 }
 
 .box {
   background-color: #fff;
   margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px 40px 40px 40px;
+  text-align: center;
   margin-top: 8%;
-  height: 500px;
-  width: 700px;
+  height: 525px;
+  width: 525px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.stepper{
+
+
+}
+
+.form-container{
+  padding-top: 10px;
+
+
+}
+
+.form__input{
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  outline: none;
+
+}
+
+.form__input:focus {
+    border-color: #00aa8d;
+}
+
+.form__input:hover {
+    border-color: #00aa8d;
+}
+
+::placeholder {
+    color: #666;
+  }
+
+.button{
+  box-sizing: border-box;
+
+
+
 }
