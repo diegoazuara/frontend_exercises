@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <script src="script-defer.js"></script>
+
+  <p>The script above requests information from the paragraph below. Normally, this is not possible, because the script is executed before the paragraph exists.</p>
+
+  <p id="p1">Hello World!</p>
+
+  <p>However, the defer attribute specifies that the script should be executed later. This way the script can request information from the paragraph.</p>
+
+</body>
+
+</html>

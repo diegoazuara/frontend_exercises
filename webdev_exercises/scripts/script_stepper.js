@@ -1,53 +1,77 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
 
-var btn = document.getElementById("nextBtn");
-btn.addEventListener("click", function() {
+var nextBtn = document.getElementById("nextBtn");
+nextBtn.addEventListener("click", function() {
   nextPrev(1)
 }); //Function(){} for it to run after clicking
 
+var prevBtn = document.getElementById("prevBtn");
+prevBtn.addEventListener("click", function() {
+  nextPrev(-1)
+});
 
-function showTab(n) {
+var stepFirst = document.getElementById("step-1");
+stepFirst.addEventListener("click", function() {
+  stepShow(0)
+})
+
+var stepSecond = document.getElementById("step-2");
+stepSecond.addEventListener("click", function() {
+  stepShow(1)
+})
+
+var stepThird = document.getElementById("step-3");
+stepThird.addEventListener("click", function() {
+  stepShow(2)
+})
+
+var stepFourth = document.getElementById("step-4");
+stepFourth.addEventListener("click", function() {
+  stepShow(3)
+})
+
+function showTab(currentTab) {
   // This function will display the specified tab of the form...
-  var x = document.getElementsByClassName("tab");
-  x[n].style.display = "block";
+  var tabs = document.getElementsByClassName("tab");
+  tabs[currentTab].style.display = "block";
 
   //... and fix the Previous/Next buttons:
-  if (n == 0) {
+  if (currentTab == 0) {
     document.getElementById("prevBtn").style.display = "none";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (currentTab == (tabs.length - 1)) {
     document.getElementById("nextBtn").textContent = "Submit";
   } else {
     document.getElementById("nextBtn").textContent = "Next";
   }
   //... and run a function that will display the correct step indicator:
-  fixStepIndicator(n)
+  fixStepIndicator(currentTab)
 }
 
-function fixStepIndicator(n) {
+function fixStepIndicator(currentTab) {
   // This function removes the "active" class of all steps...
-  var i, x = document.getElementsByClassName("step");
-  for (i = 0; i < x.length; i++) {
-    x[i].className = x[i].className.replace(" active", "");
+  var i, steps = document.getElementsByClassName("step");
+  for (i = 0; i < steps.length; i++) {
+    steps[i].className = steps[i].className.replace(" active", "");
   }
   //... and adds the "active" class on the current step:
-  x[n].className += " active";
+  steps[currentTab].className += " active";
 }
 
 function nextPrev(n) {
   // This function will figure out which tab to display
-  var x = document.getElementsByClassName("tab");
+  var tabs = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
   if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
-  x[currentTab].style.display = "none";
+  tabs[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form...
-  if (currentTab >= x.length) {
+  if (currentTab >= tabs.length) {
     // ... the form gets submitted:
     document.getElementById("regForm").submit();
     return false;
@@ -56,21 +80,46 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
+function stepShow(n) {
+  // This function will figure out which tab to display
+
+  var tabs = document.getElementsByClassName("tab");
+
+  // You can get back to previous steps but you can't skip a step
+  if (n < currentTab) {
+    // Hide the current tab:
+    tabs[currentTab].style.display = "none";
+    // Changes current tab according to the step circle:
+    currentTab = n;
+    // Display the correct tab:
+    showTab(currentTab);
+  } else {
+    if (!validateForm()) return false;
+  }
+
+  // Hide the current tab:
+  tabs[currentTab].style.display = "none";
+  // Changes current tab to the corrrect step circle
+  currentTab = n;
+  // Display the correct tab:
+  showTab(currentTab);
+}
+
 function validateForm() {
   // This function deals with validation of the form fields
-  var x, y, i, valid = true;
+  var tabs, formInputs, count, valid = true;
   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 
-  x = document.getElementsByClassName("tab");
-  y = x[currentTab].getElementsByClassName("form__input");
+  tabs = document.getElementsByClassName("tab");
+  formInputs = tabs[currentTab].getElementsByClassName("form-input");
   z = document.getElementById('email').value;
 
   // Validates password
 
   if (currentTab == 0) {
     if (document.getElementById('password').value.length < 8) {
-      y[2].className += " invalid";
+      formInputs[2].className += " invalid";
       valid = false;
     } else {
 
@@ -78,7 +127,7 @@ function validateForm() {
         document.getElementById('confirm_password').value) {
         valid = true;
       } else {
-        y[3].className += " invalid";
+        formInputs[3].className += " invalid";
         valid = false;
       }
     }
@@ -87,11 +136,11 @@ function validateForm() {
 
 
   // A loop that checks every input field in the current tab:
-  for (i = 0; i < y.length; i++) {
+  for (count = 0; count < formInputs.length; count++) {
     // If a field is empty...
-    if (y[i].value == "") {
+    if (formInputs[count].value == "") {
       // add an "invalid" class to the field:
-      y[i].className += " invalid";
+      formInputs[count].className += " invalid";
       // and set the current valid status to false
       valid = false;
     }
@@ -99,7 +148,7 @@ function validateForm() {
 
   // Validates email
   if (reg.test(z) == false) {
-    y[1].className += " invalid";
+    formInputs[1].className += " invalid";
     valid = false;
   }
 

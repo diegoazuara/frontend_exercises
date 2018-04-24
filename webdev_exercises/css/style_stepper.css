@@ -29,7 +29,6 @@ body {
   padding: 30px 40px 40px 40px;
   text-align: center;
   margin-top: 8%;
-  width: 525px;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
@@ -98,6 +97,10 @@ input[type="date"]:valid:before {
   text-align: right;
 }
 
+.button {
+  box-sizing: border-box;
+}
+
 .btn--primary {
   background-color: #0050e6;
   height: 44px;
@@ -105,7 +108,7 @@ input[type="date"]:valid:before {
   font-size: 1em;
   font-family: 'Lato', sans-serif;
   color: white;
-  border-radius: 25px;
+  border-radius: 22px;
   border: none;
   padding: 10px 15px;
   transition: background-color 0.3s ease;
@@ -150,8 +153,4 @@ input[type="date"]:valid:before {
 
 ::placeholder {
   color: #666;
-}
-
-.button {
-  box-sizing: border-box;
 }

@@ -61,10 +61,10 @@
   <div class="wrapper-register">
     <div class="box">
       <div class="step-tabs">
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
-        <span class="step"></span>
+        <span class="step" id="step-1"></span>
+        <span class="step" id="step-2"></span>
+        <span class="step" id="step-3"></span>
+        <span class="step" id="step-4"></span>
       </div>
       <div class="form-container">
         <form id="regForm">
@@ -78,7 +78,7 @@
               <option value="méxico">México</option>
               <option value="canada">Canada</option>
             </select>
-            <input type="email" class="form-input" id="email" oninput="this.className = 'form-input'" onblur="validateEmail(this)" name="" placeholder="Email">
+            <input type="email" class="form-input" id="email" oninput="this.className = 'form-input'" name="" placeholder="Email">
             <input type="password" class="form-input" id="password" oninput="this.className = 'form-input'" name="" placeholder="Create your password">
             <input type="password" class="form-input" id="confirm_password" oninput="this.className = 'form-input'" name="" placeholder="Confirm your password">
           </div>
@@ -110,7 +110,7 @@
           </div>
         </form>
         <div class="button-section">
-          <button type="button" class="btn--secondary" id="prevBtn" onclick="nextPrev(-1)" name="button">Previous</button>
+          <button type="button" class="btn--secondary" id="prevBtn" name="button">Previous</button>
           <button type="button" class="btn--primary" id="nextBtn" name="button">Next</button>
         </div>
       </div>
