@@ -4,6 +4,7 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>CSS Patterns: Media Object</title>
+  <link rel="stylesheet" href="/css/rest_api.css">
 </head>
 
 <body>
@@ -16,16 +17,96 @@
      IMPORTANT: need to implement then and catch callbacks and change something in the DOM.
         https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
         please (optional) search for another better fake api https://reqres.in/
+
++ + +
+first
+second
+third
+
      4. (Optional) user may add info to those inputs and data would be saved (POST).
      5. Add a link to a html page where users can learn about ajax and promises (make it easy for the user)
 
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/catch
 
+- Hasta que completes el primer input se habilitan los demas inputs. Debe de ser algo que no sea un simple text input.
+
+Mas desarrollado
+
+fake apis cualqueira
+
+personas vehiculos
+
+https://swapi.co/
+
+que te traega uno luego otro luego otro, para que el usuario no se desespere.
+
+clase disables para los inputs hasta que uno cargue
+
  -->
 
   <!-- Write your code here -->
 
+  <div class="wrapper-register">
+    <div class="box">
+      <div class="step-tabs">
+        <span class="step" id="step-1"></span>
+        <span class="step" id="step-2"></span>
+        <span class="step" id="step-3"></span>
+        <span class="step" id="step-4"></span>
+      </div>
+      <div class="form-container">
+        <form id="regForm">
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Create your account</h1>
+              <span class="description">Use a valid email address. Password must be 8 characters long, we recommend the use of upper and lower case letters. </span>
+            </div>
+            <select class="form-input">
+              <option value="united_states">United States</option>
+              <option value="méxico">México</option>
+              <option value="canada">Canada</option>
+            </select>
+            <input type="email" class="form-input" id="email" oninput="this.className = 'form-input'" name="" placeholder="Email">
+            <input type="password" class="form-input" id="password" oninput="this.className = 'form-input'" name="" placeholder="Create your password">
+            <input type="password" class="form-input" id="confirm_password" oninput="this.className = 'form-input'" name="" placeholder="Confirm your password">
+          </div>
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Personal Information</h1>
+              <span class="description">You must use your full legal name. Please do not use all capital letters. </span>
+            </div>
+            <input class="form-input" oninput="this.className = 'form-input'" placeholder="First Name" oninput="this.className = ''" name="first_name">
+            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Last Name" oninput="this.className = ''" name="last_name">
+            <input type="date" class="form-input" oninput="this.className = 'form-input'" placeholder="Date of Birth " name="date" onfocus="(this.type='date')" required>
+          </div>
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Address Information</h1>
+              <span class="description"> Please use a real address, if you’re using this account as a business you could use your business address. </span>
+            </div>
+            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Street Address 1" name="street_address">
+            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Street Address 2" name="street_address">
+            <input type="tel" class="form-input" oninput="this.className = 'form-input'" placeholder="Phone Number" name="phone_number">
+            <input class="form-input" oninput="this.className = 'form-input'" placeholder="City" name="state">
+            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Zip" name="zip_code">
+          </div>
+          <div class="tab">
+            <div class="info">
+              <h1 class="title">Thank you!</h1>
+              <span class="description">Thank you for your application! <br> Please check your information before submiting. </span>
+            </div>
+          </div>
+        </form>
+        <div class="button-section">
+          <button type="button" class="btn--secondary" id="prevBtn" name="button">Previous</button>
+          <button type="button" class="btn--primary" id="nextBtn" name="button">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="scripts/rest_api.js"></script>
 </body>
 
 </html>

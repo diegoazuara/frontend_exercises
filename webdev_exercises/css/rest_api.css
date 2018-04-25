@@ -1,0 +1,157 @@
+body {
+  background-color: #f1f4f7;
+  font-family: 'Lato', sans-serif;
+}
+
+.color--primary {
+  color: #0050e6;
+}
+
+.color--secondary {
+  color: #62148c;
+}
+
+.wrapper-register {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  padding-top: 100px;
+  grid-gap: 0px;
+  background-color: #f1f4f7;
+  color: #444;
+  justify-content: center;
+}
+
+.box {
+  grid-column-start: 2;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 30px 40px 40px 40px;
+  text-align: center;
+  min-width: 400px;
+  margin: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.step-tabs {}
+
+.step {
+  height: 12px;
+  width: 12px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  margin-right: 12px;
+}
+
+.form-container {}
+
+.tab {
+  display: none;
+}
+
+.info {
+  padding-bottom: 20px;
+}
+
+.title {}
+
+.description {
+  font-size: 1.1em;
+}
+
+.form-input {
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #666;
+  outline: none;
+}
+
+.form__input:focus {
+  border-color: #0050e6;
+}
+
+input[type="date"]:before {
+  content: attr(placeholder)':' !important;
+  color: #666;
+  margin-right: 0.5em;
+}
+
+input[type="date"]:focus:before {
+  content: "";
+}
+
+input[type="date"]:valid:before {
+  content: "";
+}
+
+.button-section {
+  text-align: right;
+}
+
+.button {
+  box-sizing: border-box;
+}
+
+.btn--primary {
+  background-color: #0050e6;
+  height: 44px;
+  width: 100px;
+  font-size: 1em;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  border-radius: 22px;
+  border: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+.btn--secondary {
+  background-color: #8d1dc9;
+  height: 44px;
+  width: 100px;
+  font-size: 1em;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  border-radius: 22px;
+  border: none;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+  outline: none;
+}
+
+.btn--primary:hover {
+  background-color: #003eb3;
+}
+
+.btn--secondary:hover {
+  background-color: #6d169c;
+}
+
+.active {
+  opacity: 1;
+}
+
+.invalid {
+  background-color: #ffdddd;
+  border: 1px solid #ff8080;
+}
+
+.finish {
+  background-color: #dcefdc;
+  border: 1px solid #73bf73;
+}
+
+::placeholder {
+  color: #666;
+}
