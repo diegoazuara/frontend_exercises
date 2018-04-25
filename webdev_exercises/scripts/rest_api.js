@@ -1,15 +1,61 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
 
+var dropdown = document.getElementById('star_wars-films');
+dropdown.length = 0;
+
+var defaultOption = document.createElement('option');
+defaultOption.text = 'Choose Film';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+
+//Creating an XMLHttpRequest Object
+ourRequest = new XMLHttpRequest();
+ourRequest.onreadystatechange = validate;
+ourRequest.open("GET", "https://swapi.co/api/films/", true);
+ourRequest.send();
+
+$.ajax({
+
+})
+
+
+function validate() {
+
+  var count;
+  // It differentiates between a successful and unsuccessful AJAX call by checking for a 200 OK response code.
+  if (ourRequest.readyState === XMLHttpRequest.DONE) {
+    if (ourRequest.status == 200) {
+
+      // Parse the data with JSON.parse(), and the data becomes a JavaScript object.
+      var ourData = JSON.parse(ourRequest.responseText);
+      console.log(ourData);
+
+      for (count = 0; count < ourData.length; count++) {
+        var option = document.createElement('option');
+        option.text = ourData[i].title;
+        dropdown.add(option);
+      }
+
+      alert('success');
+
+    } else {
+      // There was a error in the request
+      alert('There was a error with the request.');
+    }
+  }
+}
+
 var nextBtn = document.getElementById("nextBtn");
 nextBtn.addEventListener("click", function() {
   nextPrev(1)
-}); //Function(){} for it to run after clicking
+});
 
 var prevBtn = document.getElementById("prevBtn");
 prevBtn.addEventListener("click", function() {
   nextPrev(-1)
-});
+})
 
 var stepFirst = document.getElementById("step-1");
 stepFirst.addEventListener("click", function() {

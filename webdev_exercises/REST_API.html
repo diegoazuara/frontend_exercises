@@ -3,8 +3,11 @@
 
 <head lang="en">
   <meta charset="UTF-8">
-  <title>CSS Patterns: Media Object</title>
+  <title>Rest API</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/rest_api.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 </head>
 
 <body>
@@ -43,6 +46,78 @@ que te traega uno luego otro luego otro, para que el usuario no se desespere.
 
 clase disables para los inputs hasta que uno cargue
 
+https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
+
+como los try catch
+
+cada llamada a ajax promesas
+
+usar jquery
+
+cada llamada a ajax debe estar dentro de un promise
+
+new Promise
+
+o
+
+return Promise
+
+https://developers.google.com/web/fundamentals/primers/promises?hl=es
+
+http://blog.revathskumar.com/2016/06/why-i-prefer-ajax-promise.html
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise Advanced Example! code pen
+
+https://www.stephanboyer.com/post/107/fun-with-promises-in-javascript <--------
+
+https://www.youtube.com/watch?v=bcjq3koKpFE
+
+A promise supports two methods: then and catch. then takes a continuation, which is just a callback that takes the result as an argument and returns a new promise or any other value. Similarly, catch is the callback that is invoked when the action raises an exception or fails in some other way.
+
+var promise1 = new Promise(function(resolve, reject) {
+  setTimeout(resolve, 100, 'foo');
+
+  $.ajax(){
+
+
+  }sucess: resolve,
+    error: reject
+});
+
+console.log(promise1);
+// expected output: [object Promise]
+
+- - - - - - - - -- - - -
+
+let myFirstPromise = new Promise((resolve, reject) => {
+  // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
+  // In this example, we use setTimeout(...) to simulate async code.
+  // In reality, you will probably be using something like XHR or an HTML5 API.
+  setTimeout(function(){
+    resolve("Success!"); // Yay! Everything went well!
+  }, 250);
+});
+
+myFirstPromise.then((successMessage) => {
+  // successMessage is whatever we passed in the resolve(...) function above.
+  // It doesn't have to be a string, but if it is only a succeed message, it probably will be.
+  console.log("Yay! " + successMessage);
+});
+
+_ _ _ _ _ _ _ _ _ _ _
+
+var promise = new Promise(function(resolve, reject) {
+  // do a thing, possibly async, then…
+
+  if (/* everything turned out fine */) {
+    resolve("Stuff worked!");
+  }
+  else {
+    reject(Error("It broke"));
+  }
+});
+
+The jqXHR objects returned by $.ajax() as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see Deferred object for more information). These methods take one or more function arguments that are called when the $.ajax() request terminates. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.) Available Promise methods of the jqXHR object include:
  -->
 
   <!-- Write your code here -->
@@ -59,17 +134,15 @@ clase disables para los inputs hasta que uno cargue
         <form id="regForm">
           <div class="tab">
             <div class="info">
-              <h1 class="title">Create your account</h1>
+              <h1 class="title">Star Wars</h1>
               <span class="description">Use a valid email address. Password must be 8 characters long, we recommend the use of upper and lower case letters. </span>
             </div>
-            <select class="form-input">
-              <option value="united_states">United States</option>
-              <option value="méxico">México</option>
-              <option value="canada">Canada</option>
-            </select>
-            <input type="email" class="form-input" id="email" oninput="this.className = 'form-input'" name="" placeholder="Email">
-            <input type="password" class="form-input" id="password" oninput="this.className = 'form-input'" name="" placeholder="Create your password">
-            <input type="password" class="form-input" id="confirm_password" oninput="this.className = 'form-input'" name="" placeholder="Confirm your password">
+            <select id="star_wars-films" class="form-input">
+
+              </select>
+            <input type="email" class="form-input" id="email" oninput="this.className = 'form-input'" name="" placeholder="Email" disabled>
+            <input type="password" class="form-input" id="password" oninput="this.className = 'form-input'" name="" placeholder="Create your password" disabled>
+            <input type="password" class="form-input" id="confirm_password" oninput="this.className = 'form-input'" name="" placeholder="Confirm your password" disabled>
           </div>
           <div class="tab">
             <div class="info">
@@ -106,7 +179,9 @@ clase disables para los inputs hasta que uno cargue
     </div>
   </div>
 
-  <script type="scripts/rest_api.js"></script>
+
+  <script src="scripts/jquery.js"></script>
+  <script src="scripts/rest_api.js"></script>
 </body>
 
 </html>
