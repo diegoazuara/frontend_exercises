@@ -3,6 +3,10 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+img {
+  width: 300px;
+}
+
 .color--primary {
   color: #0050e6;
 }

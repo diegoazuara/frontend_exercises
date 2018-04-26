@@ -1,51 +1,108 @@
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the crurrent tab
 
-var dropdown = document.getElementById('star_wars-films');
-dropdown.length = 0;
+
+var dropdownFilms = document.getElementById('star_wars-films');
+dropdownFilms.length = 0;
 
 var defaultOption = document.createElement('option');
-defaultOption.text = 'Choose Film';
+defaultOption.text = 'Choose Film...';
 
-dropdown.add(defaultOption);
-dropdown.selectedIndex = 0;
+dropdownFilms.add(defaultOption);
+dropdownFilms.selectedIndex = 0;
 
-//Creating an XMLHttpRequest Object
-ourRequest = new XMLHttpRequest();
-ourRequest.onreadystatechange = validate;
-ourRequest.open("GET", "https://swapi.co/api/films/", true);
-ourRequest.send();
+var dropdownCharacters = document.getElementById('star_wars-characters');
+dropdownCharacters.length = 0;
 
-$.ajax({
+var defaultOptionCharacter = document.createElement('option');
+defaultOptionCharacter.text = 'Choose Character...';
+
+dropdownCharacters.add(defaultOptionCharacter);
+dropdownCharacters.selectedIndex = 0;
+
+
+
+
+
+var promise = new Promise(function(resolve, reject) {
+  $.ajax({
+    url: 'https://swapi.co/api/films/',
+    type: 'GET',
+    dataType: 'json',
+    success: function(data, textStatus, xhr) {
+      var object = {
+        data: data,
+        "textStatus": textStatus,
+        xhr: xhr
+
+      }
+
+      console.log(data);
+      resolve(object);
+    },
+
+    error: function(xhr, textStatus, error) {
+      reject(xhr.status)
+
+    }
+  });
+});
+
+
+promise.then(function(object) {
+
+  addFilms(object.data);
+  alert("Status: " + object.xhr.status);
+
+}).catch(function(error) {
+
+  alert("Error: " + error);
 
 })
 
+function addFilms(data) {
 
-function validate() {
-
+  var data = data;
   var count;
-  // It differentiates between a successful and unsuccessful AJAX call by checking for a 200 OK response code.
-  if (ourRequest.readyState === XMLHttpRequest.DONE) {
-    if (ourRequest.status == 200) {
 
-      // Parse the data with JSON.parse(), and the data becomes a JavaScript object.
-      var ourData = JSON.parse(ourRequest.responseText);
-      console.log(ourData);
-
-      for (count = 0; count < ourData.length; count++) {
-        var option = document.createElement('option');
-        option.text = ourData[i].title;
-        dropdown.add(option);
-      }
-
-      alert('success');
-
-    } else {
-      // There was a error in the request
-      alert('There was a error with the request.');
-    }
+  //Adds option to dropdownlist
+  for (count = 0; count < data.results.length; count++) {
+    var option = document.createElement('option');
+    option.text = data.results[count].title;
+    option.setAttribute("value", count);
+    dropdownFilms.add(option);
   }
+
+  var selectedOption = document.getElementById("star_wars-films");
+  selectedOption.addEventListener("change", function() {
+
+    var value = $('#star_wars-films option:selected').val();
+
+    if (value >= 0) {
+      showCharacters(data, value);
+
+    }
+
+  });
 }
+
+
+function showCharacters(data, value) {
+
+  var option = document.createElement('option');
+  for (count = 1; count < data.results[0].characters.length; count++) {
+    option.text = data.results[value].characters[count];
+    dropdownCharacters.add(option);
+  }
+
+  /*if (document.getElementById('selectid').value == "val" + count)
+    var option = document.createElement('option');
+  option.text = data.results[count].title;
+  option.setAttribute("value", count);
+  dropdown.add(option);*/
+}
+
+
 
 var nextBtn = document.getElementById("nextBtn");
 nextBtn.addEventListener("click", function() {
@@ -84,7 +141,7 @@ function showTab(currentTab) {
 
   //... and fix the Previous/Next buttons:
   if (currentTab == 0) {
-    document.getElementById("prevBtn").style.display = "none";
+    document.getElementById("prevBtn").style.display = "inline";
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }

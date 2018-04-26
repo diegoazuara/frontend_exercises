@@ -39,19 +39,13 @@ clase disables para los inputs hasta que uno cargue
 
 https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
 
-como los try catch
-
 cada llamada a ajax promesas
 
 usar jquery
 
 cada llamada a ajax debe estar dentro de un promise
 
-new Promise
-
-o
-
-return Promise
+new Promise / return Promise
 
 https://www.stephanboyer.com/post/107/fun-with-promises-in-javascript CHECAR ESTO
 
@@ -63,15 +57,12 @@ var promise1 = new Promise(function(resolve, reject) {
   setTimeout(resolve, 100, 'foo');
 
   $.ajax(){
-
-
   }sucess: resolve,
     error: reject
 });
 
 console.log(promise1);
 // expected output: [object Promise]
-
 
 var promise = new Promise(function(resolve, reject) {
   // do a thing, possibly async, then…
@@ -85,6 +76,8 @@ var promise = new Promise(function(resolve, reject) {
 });
 
 The jqXHR objects returned by $.ajax() as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see Deferred object for more information). These methods take one or more function arguments that are called when the $.ajax() request terminates. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.) Available Promise methods of the jqXHR object include:
+
+Pelicula -> personaje -> vehiculo
  -->
 
   <!-- Write your code here -->
@@ -101,35 +94,37 @@ The jqXHR objects returned by $.ajax() as of jQuery 1.5 implement the Promise in
         <form id="regForm">
           <div class="tab">
             <div class="info">
-              <h1 class="title">Star Wars</h1>
+              <img src="https://png.icons8.com/color/1600/star-wars.png"><br>
               <span class="description">Use a valid email address. Password must be 8 characters long, we recommend the use of upper and lower case letters. </span>
             </div>
             <select id="star_wars-films" class="form-input">
 
-              </select>
-            <input type="email" class="form-input" id="email" oninput="this.className = 'form-input'" name="" placeholder="Email" disabled>
-            <input type="password" class="form-input" id="password" oninput="this.className = 'form-input'" name="" placeholder="Create your password" disabled>
-            <input type="password" class="form-input" id="confirm_password" oninput="this.className = 'form-input'" name="" placeholder="Confirm your password" disabled>
+            </select>
+
+            <select id="star_wars-characters" class="form-input">
+
+            </select>
+
           </div>
           <div class="tab">
             <div class="info">
               <h1 class="title">Personal Information</h1>
               <span class="description">You must use your full legal name. Please do not use all capital letters. </span>
             </div>
-            <input class="form-input" oninput="this.className = 'form-input'" placeholder="First Name" oninput="this.className = ''" name="first_name">
-            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Last Name" oninput="this.className = ''" name="last_name">
-            <input type="date" class="form-input" oninput="this.className = 'form-input'" placeholder="Date of Birth " name="date" onfocus="(this.type='date')" required>
+            <input class="form-input" oninput="this.className='form-input'" placeholder="First Name" oninput="this.className=''" name="first_name">
+            <input class="form-input" oninput="this.className='form-input'" placeholder="Last Name" oninput="this.className=''" name="last_name">
+            <input type="date" class="form-input" oninput="this.className='form-input'" placeholder="Date of Birth" name="date" onfocus="(this.type='date' )" required>
           </div>
           <div class="tab">
             <div class="info">
               <h1 class="title">Address Information</h1>
               <span class="description"> Please use a real address, if you’re using this account as a business you could use your business address. </span>
             </div>
-            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Street Address 1" name="street_address">
-            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Street Address 2" name="street_address">
-            <input type="tel" class="form-input" oninput="this.className = 'form-input'" placeholder="Phone Number" name="phone_number">
-            <input class="form-input" oninput="this.className = 'form-input'" placeholder="City" name="state">
-            <input class="form-input" oninput="this.className = 'form-input'" placeholder="Zip" name="zip_code">
+            <input class="form-input" oninput="this.className='form-input'" placeholder="Street Address 1" name="street_address">
+            <input class="form-input" oninput="this.className='form-input'" placeholder="Street Address 2" name="street_address">
+            <input type="tel" class="form-input" oninput="this.className='form-input'" placeholder="Phone Number" name="phone_number">
+            <input class="form-input" oninput="this.className='form-input'" placeholder="City" name="state">
+            <input class="form-input" oninput="this.className='form-input'" placeholder="Zip" name="zip_code">
           </div>
           <div class="tab">
             <div class="info">

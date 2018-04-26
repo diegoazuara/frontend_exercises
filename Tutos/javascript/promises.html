@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Promises Javascript</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -14,7 +15,7 @@
       // We call resolve(...) when what we were doing asynchronously was successful, and reject(...) when it failed.
       // In reality, you will probably be using something like XHR or an HTML5 API.
 
-      var data = "1233";
+      var data = "123";
 
       if (data) {
         resolve("Success!");
@@ -32,6 +33,33 @@
     }).catch(function(errorMessage) {
       // errorMessage is whatever we passed in the reject(...) function above.
       console.log(errorMessage);
+    });
+
+
+
+    // AJAX inside a JavaScript Promise
+    var x;
+    var promise = new Promise(function(resolve, reject) {
+      $.ajax({
+        url: 'https://swapi.co/api/films/1/',
+        type: 'GET',
+        dataType: 'json',
+        //To sent to the server you use "data:""
+        success: function(data, textStatus, xhr) {
+          console.log(data.title);
+          alert("Status: " + textStatus + " , " + xhr.status);
+        },
+        error: function(xhr, textStatus, error) {
+          alert("Status: " + textStatus + " , " + xhr.status);
+        }
+        /*function(data) {
+          if (data > 0) {
+            resolve(true);
+          } else {
+            reject(false);
+          }
+        }*/
+      });
     });
   </script>
 </body>
