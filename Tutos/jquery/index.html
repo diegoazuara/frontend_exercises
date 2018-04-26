@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Tutorial</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+  <h1>jQuery tutorial</h1>
+  <button type="button" name="button" id="btn">Click Me</button>
+
+  <script type="text/javascript">
+    $("document").ready(function() {
+      alert("Hola mundo");
+      $("button").click(function() {
+        alert("clic!")
+      })
+      $("h1").click(function() {
+        alert("clic!")
+      })
+    });
+  </script>
+</body>
+
+</html>
