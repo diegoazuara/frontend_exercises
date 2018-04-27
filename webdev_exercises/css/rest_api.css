@@ -4,7 +4,15 @@ body {
 }
 
 img {
-  width: 300px;
+  width:300px;
+  padding: 20px 0px;
+  margin: auto;
+}
+
+.info{
+  text-align: center;
+  content: border-box;
+  margin: auto;
 }
 
 .color--primary {
