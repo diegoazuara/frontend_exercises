@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/rest_api.css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
@@ -77,71 +77,61 @@ var promise = new Promise(function(resolve, reject) {
 
 The jqXHR objects returned by $.ajax() as of jQuery 1.5 implement the Promise interface, giving them all the properties, methods, and behavior of a Promise (see Deferred object for more information). These methods take one or more function arguments that are called when the $.ajax() request terminates. This allows you to assign multiple callbacks on a single request, and even to assign callbacks after the request may have completed. (If the request is already complete, the callback is fired immediately.) Available Promise methods of the jqXHR object include:
 
-Pelicula -> personaje -> vehiculo
+
+Si admite POST usarlo swapi
  -->
+
+
 
   <!-- Write your code here -->
 
-  <div class="wrapper-register">
+  <div class="wrapper">
     <div class="box">
-      <div class="step-tabs">
-        <span class="step" id="step-1"></span>
-        <span class="step" id="step-2"></span>
-        <span class="step" id="step-3"></span>
-        <span class="step" id="step-4"></span>
-      </div>
       <div class="form-container">
         <form id="regForm">
           <div class="tab">
             <div class="info">
               <img src="https://vignette.wikia.nocookie.net/disney/images/2/21/Star_Wars_logo.png/revision/latest?cb=20170909202326"><br>
-              <span class="description">Use a valid email address. Password must be 8 characters long, we recommend the use of upper and lower case letters. </span>
+              <span class="title"> CHARACTER ENCICLOPEDIA  </span>
             </div>
-            <select id="star_wars-films" class="form-input">
-
-            </select>
-
-            <select id="star_wars-characters" class="form-input">
-
-            </select>
-
-          </div>
-          <div class="tab">
-            <div class="info">
-              <h1 class="title">Personal Information</h1>
-              <span class="description">You must use your full legal name. Please do not use all capital letters. </span>
+            <!-- Selects are populated via JavaScript-->
+            <select id="star_wars-films" class="form-input"></select>
+            <select id="star_wars-characters" class="form-input" disabled> </select>
+            <!-- Homeworld , species,  birth year, gender, height , mass-->
+            <div class="character-info">
+              <div class="info-row">
+                <span class="label ">Homeworld:</span>
+                <input type="text" name="homeworld" value="" class="form-input display" disabled>
+              </div>
+              <div class="info-row">
+                <span class="label ">Species:</span>
+                <input type="text" name="homeworld" value="" class="form-input display" disabled>
+              </div>
+              <div class="info-row">
+                <span class="label ">Birth Year:</span>
+                <input type="text" name="homeworld" value="" class="form-input display" disabled>
+              </div>
+              <div class="info-row">
+                <span class="label ">Gender:</span>
+                <input type="text" name="homeworld" value="" class="form-input display" disabled><br>
+              </div>
+              <div class="info-row">
+                <span class="label ">Height:</span>
+                <input type="text" name="homeworld" value="" class="form-input display" disabled><br>
+              </div>
+              <div class="info-row">
+                <span class="label ">Mass:</span>
+                <input type="text" name="homeworld" value="" class="form-input display" disabled><br>
+              </div>
             </div>
-            <input class="form-input" oninput="this.className='form-input'" placeholder="First Name" oninput="this.className=''" name="first_name">
-            <input class="form-input" oninput="this.className='form-input'" placeholder="Last Name" oninput="this.className=''" name="last_name">
-            <input type="date" class="form-input" oninput="this.className='form-input'" placeholder="Date of Birth" name="date" onfocus="(this.type='date' )" required>
-          </div>
-          <div class="tab">
-            <div class="info">
-              <h1 class="title">Address Information</h1>
-              <span class="description"> Please use a real address, if you’re using this account as a business you could use your business address. </span>
-            </div>
-            <input class="form-input" oninput="this.className='form-input'" placeholder="Street Address 1" name="street_address">
-            <input class="form-input" oninput="this.className='form-input'" placeholder="Street Address 2" name="street_address">
-            <input type="tel" class="form-input" oninput="this.className='form-input'" placeholder="Phone Number" name="phone_number">
-            <input class="form-input" oninput="this.className='form-input'" placeholder="City" name="state">
-            <input class="form-input" oninput="this.className='form-input'" placeholder="Zip" name="zip_code">
-          </div>
-          <div class="tab">
-            <div class="info">
-              <h1 class="title">Thank you!</h1>
-              <span class="description">Thank you for your application! <br> Please check your information before submiting. </span>
-            </div>
-          </div>
         </form>
         <div class="button-section">
-          <button type="button" class="btn--secondary" id="prevBtn" name="button">Previous</button>
-          <button type="button" class="btn--primary" id="nextBtn" name="button">Next</button>
+          <button type="button" class="btn--primary" id="showBtn" name="button" disabled>SHOW INFO</button>
+        </div>
         </div>
       </div>
     </div>
-  </div>
-
-  <script src="scripts/rest_api.js"></script>
+    <script src="scripts/rest_api.js"></script>
 </body>
 
 </html>
