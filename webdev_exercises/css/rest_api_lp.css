@@ -1,0 +1,90 @@
+body {
+  font-family: 'Gugi', cursive;
+  background-image: url("/img/death-star-wallpaper.jpg");
+}
+
+header {
+  vertical-align: middle;
+}
+
+.navbar {
+  background-color: #000;
+  height: 100px;
+  width: 100%;
+  position: fixed;
+}
+
+.container {
+  content: border-box;
+  background-color: #000;
+  display: inline-block;
+  margin-top: 25px;
+  margin-right: 100px;
+  margin-left: 100px;
+  width: 100%;
+}
+
+.wrapper {
+  display: grid;
+  background: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/star-wars-death-star-wallpaper-thats-no-moon.jpg");
+  background-size: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0px;
+  color: #fbdd2c;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.box {
+  grid-column-start: 2;
+  text-align: center;
+  color: white;
+  margin: 300px 0px;
+}
+
+.title {
+  font-size: 60px;
+  text-shadow: 4px 6px #000;
+}
+
+.subtitle {
+  font-size: 35px;
+  width: 100%;
+  text-shadow: 4px 6px #000;
+}
+
+.button {
+  margin-top: 50px;
+}
+
+header img {
+  display: inline-block;
+  vertical-align: middle;
+  float: left;
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: auto;
+  overflow: auto;
+  text-align: right;
+  padding-right: 200px;
+}
+
+li {
+  display: inline-block;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}

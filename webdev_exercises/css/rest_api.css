@@ -1,5 +1,7 @@
 body {
-  background-color: #000;
+  background-color: #fff;
+  background-image: url("http://media-s3-us-east-1.ceros.com/editorial-content/images/2017/12/11/c759d78e5908c0b440c619d1bce865c8/background-stars.jpg");
+  background-size: 100% 100%;
   font-family: 'Gugi', cursive;
   color: white;
 }
@@ -28,7 +30,6 @@ img {
   grid-template-rows: auto;
   padding-top: 50px;
   grid-gap: 0px;
-  background-color: #000000;
   color: #fbdd2c;
   justify-content: center;
 }
@@ -59,6 +60,10 @@ img {
 .title {
   font-size: 1.1em;
   font-weight: bold;
+}
+
+#star_wars-films {
+  margin-top: 20px;
 }
 
 .description {}
@@ -114,12 +119,17 @@ img {
   padding: 10px 15px;
   transition: background-color 0.3s ease;
   outline: none;
+  cursor: pointer;
 }
 
 .btn--secondary {}
 
 .btn--primary:hover {
-  background-color: #000;
+  background-color: #040404;
+}
+
+.btn--primary:active {
+  transform: translateY(4px);
 }
 
 .btn--secondary:hover {}

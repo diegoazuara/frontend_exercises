@@ -18,6 +18,7 @@ dropdownCharacters.selectedIndex = 0;
 
 
 var promise = new Promise(function(resolve, reject) {
+  // Perform an asynchronous HTTP (Ajax) request inside a JavaScript promise.
   $.ajax({
     url: 'https://swapi.co/api/films/',
     type: 'GET',
@@ -31,10 +32,13 @@ var promise = new Promise(function(resolve, reject) {
       }
 
       console.log(data);
+      //Passes the object to the resolve function
       resolve(object);
     },
 
     error: function(xhr, textStatus, error) {
+
+      //Passes the xhr status to the reject function
       reject(xhr.status)
 
     }
@@ -43,22 +47,22 @@ var promise = new Promise(function(resolve, reject) {
 
 
 promise.then(function(object) {
-
+  // Success
   addFilms(object.data);
   alert("Status: " + object.xhr.status);
 
 }).catch(function(error) {
-
+  //Error
   alert("Error: " + error);
 
 })
 
 function addFilms(data) {
+  //Adds films to dropdownlist
 
   var data = data;
   var count;
 
-  //Adds option to dropdownlist
   for (count = 0; count < data.results.length; count++) {
     var option = document.createElement('option');
     option.text = data.results[count].title;
@@ -69,6 +73,7 @@ function addFilms(data) {
   var selectedOption = document.getElementById("star_wars-films");
   selectedOption.addEventListener("change", function() {
 
+    //If you select a new movie the character dropdownlist will reset to 0 options
     dropdownCharacters.length = 0;
     var defaultOptionCharacter = document.createElement('option');
     defaultOptionCharacter.text = 'Choose Character...';
@@ -78,6 +83,7 @@ function addFilms(data) {
 
     var value = $('#star_wars-films option:selected').val();
 
+    //If you select a movie the select character dropdownlist will be enabled, if not it will be disabled
     if (value >= 0) {
       $('#star_wars-characters').prop('disabled', false); // If value is greater than 0, the next select is enabled.
 
@@ -117,9 +123,9 @@ function showCharacters(data, value) {
       $('input').prop('disabled', false);
 
       var showBtn = document.getElementById("showBtn");
-      showBtn.addEventListener("click", function (){
+      showBtn.addEventListener("click", function() {
 
-     showInfo();
+        showInfo();
 
       });
 
@@ -144,8 +150,8 @@ function showCharacters(data, value) {
       var characterBirthYear = data.birth_year;
       var characterGender = data.gender;
       var characterHairColor = data.hair_color;
-      var characterHeight= data.height;
-      var characterMass= data.mass;
+      var characterHeight = data.height;
+      var characterMass = data.mass;
 
       var option = document.createElement('option');
       option.text = characterName;
@@ -158,7 +164,7 @@ function showCharacters(data, value) {
 
       dropdownCharacters.add(option);
 
-      $.getJSON(characterHomeworld, function(data){
+      $.getJSON(characterHomeworld, function(data) {
 
         var characterHomeworldText = data.name;
         option.setAttribute("homeworld", characterHomeworldText);
@@ -175,27 +181,30 @@ function showCharacters(data, value) {
 
 function showInfo() {
 
-  //showsInfo after button click
+  //Shows info of the character after button has been clicked
 
-var characterHomeworld = $('#star_wars-characters option:selected').attr("homeworld");
-var characterBirthYear = $('#star_wars-characters option:selected').attr("birth_year");
-var characterGender = $('#star_wars-characters option:selected').attr("gender");
-var characterHairColor = $('#star_wars-characters option:selected').attr("hair_color");
-var characterHeight = $('#star_wars-characters option:selected').attr("height");
-var characterMass = $('#star_wars-characters option:selected').attr("mass");
+  //Assigns the text of the data-attributes to new variables
+  var characterHomeworld = $('#star_wars-characters option:selected').attr("homeworld");
+  var characterBirthYear = $('#star_wars-characters option:selected').attr("birth_year");
+  var characterGender = $('#star_wars-characters option:selected').attr("gender");
+  var characterHairColor = $('#star_wars-characters option:selected').attr("hair_color");
+  var characterHeight = $('#star_wars-characters option:selected').attr("height");
+  var characterMass = $('#star_wars-characters option:selected').attr("mass");
 
-var inputHomeworld = document.getElementById("homeworld");
-var inputBirthYear = document.getElementById("birth_year");
-var inputGender = document.getElementById("gender");
-var inputHairColor = document.getElementById("hair_color");
-var inputHeight = document.getElementById("height");
-var inputMass = document.getElementById("mass");
+  //Assigns the inputs to new variables
+  var inputHomeworld = document.getElementById("homeworld");
+  var inputBirthYear = document.getElementById("birth_year");
+  var inputGender = document.getElementById("gender");
+  var inputHairColor = document.getElementById("hair_color");
+  var inputHeight = document.getElementById("height");
+  var inputMass = document.getElementById("mass");
 
-inputHomeworld.value = characterHomeworld;
-inputBirthYear.value = characterBirthYear;
-inputGender.value = characterGender;
-inputHairColor.value = characterHairColor;
-inputHeight.value = characterHeight;
-inputMass.value = characterMass;
+  //Changes the value of the inputs 
+  inputHomeworld.value = characterHomeworld;
+  inputBirthYear.value = characterBirthYear;
+  inputGender.value = characterGender;
+  inputHairColor.value = characterHairColor;
+  inputHeight.value = characterHeight;
+  inputMass.value = characterMass;
 
 }
