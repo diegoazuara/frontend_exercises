@@ -48,14 +48,31 @@ header {
   text-shadow: 4px 6px #000;
 }
 
-.subtitle {
-  font-size: 35px;
-  width: 100%;
-  text-shadow: 4px 6px #000;
+.container-subtitle {
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
-.button {
-  margin-top: 50px;
+.subtitle {
+  font-size: 26px;
+  width: 100%;
+  text-shadow: 2px 3px #000;
+}
+
+.btn--primary {
+  background-color: transparent;
+  height: 60px;
+  width: 150px;
+  font-size: 20px;
+  font-family: 'Gugi', cursive;
+  color: #fff;
+  border-radius: 15px;
+  border: 2px #fff;
+  border-style: solid;
+  padding: 10px 15px;
+  transition: background-color 0.3s ease;
+  outline: none;
+  cursor: pointer;
 }
 
 header img {
