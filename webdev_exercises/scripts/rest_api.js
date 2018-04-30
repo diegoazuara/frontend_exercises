@@ -96,21 +96,37 @@ function showCharacters(data, value) {
   var selectedOption = document.getElementById("star_wars-characters");
   selectedOption.addEventListener("change", function() {
 
+    var inputHomeworld = document.getElementById("homeworld");
+    var inputBirthYear = document.getElementById("birth_year");
+    var inputGender = document.getElementById("gender");
+    var inputHairColor = document.getElementById("hair_color");
+    var inputHeight = document.getElementById("height");
+    var inputMass = document.getElementById("mass");
 
-    /* if ($('#star_wars-characters').is(':disabled')) {
-      console.log("disabled");
-    } else {
-      console.log("enabled");
-    } */
+    inputHomeworld.value = "";
+    inputBirthYear.value = "";
+    inputGender.value = "";
+    inputHairColor.value = "";
+    inputHeight.value = "";
+    inputMass.value = "";
 
     if (selectedOption.selectedIndex > 0) {
 
       console.log("enabled")
       $('#showBtn').prop('disabled', false);
+      $('input').prop('disabled', false);
+
+      var showBtn = document.getElementById("showBtn");
+      showBtn.addEventListener("click", function (){
+
+     showInfo();
+
+      });
 
     } else {
       console.log("disabled")
       $('#showBtn').prop('disabled', true);
+      $('input').prop('disabled', true);
     }
 
   });
@@ -121,15 +137,34 @@ function showCharacters(data, value) {
     // Because JSON returns urls on the characters array, you need to use .getJSON to get the characters names
     var characterUrl = data.results[value].characters[count];
 
-
     $.getJSON(characterUrl, function(data) {
 
       var characterName = data.name;
-      console.log(characterName);
+      var characterHomeworld = data.homeworld;
+      var characterBirthYear = data.birth_year;
+      var characterGender = data.gender;
+      var characterHairColor = data.hair_color;
+      var characterHeight= data.height;
+      var characterMass= data.mass;
+
       var option = document.createElement('option');
       option.text = characterName;
       option.setAttribute("value", count);
+      option.setAttribute("birth_year", characterBirthYear);
+      option.setAttribute("gender", characterGender);
+      option.setAttribute("hair_color", characterHairColor);
+      option.setAttribute("height", characterHeight);
+      option.setAttribute("mass", characterMass);
+
       dropdownCharacters.add(option);
+
+      $.getJSON(characterHomeworld, function(data){
+
+        var characterHomeworldText = data.name;
+        option.setAttribute("homeworld", characterHomeworldText);
+
+      });
+
 
     });
 
@@ -137,24 +172,30 @@ function showCharacters(data, value) {
 
 }
 
-function showInfo(data) {
+
+function showInfo() {
+
   //showsInfo after button click
 
-  var value = $('#star_wars-characters option:selected').val();
+var characterHomeworld = $('#star_wars-characters option:selected').attr("homeworld");
+var characterBirthYear = $('#star_wars-characters option:selected').attr("birth_year");
+var characterGender = $('#star_wars-characters option:selected').attr("gender");
+var characterHairColor = $('#star_wars-characters option:selected').attr("hair_color");
+var characterHeight = $('#star_wars-characters option:selected').attr("height");
+var characterMass = $('#star_wars-characters option:selected').attr("mass");
 
+var inputHomeworld = document.getElementById("homeworld");
+var inputBirthYear = document.getElementById("birth_year");
+var inputGender = document.getElementById("gender");
+var inputHairColor = document.getElementById("hair_color");
+var inputHeight = document.getElementById("height");
+var inputMass = document.getElementById("mass");
 
-  for (let count = 0; count < data.results[value].characters.length; count++) {
-    var characterUrl = data.results[value].characters[count];
+inputHomeworld.value = characterHomeworld;
+inputBirthYear.value = characterBirthYear;
+inputGender.value = characterGender;
+inputHairColor.value = characterHairColor;
+inputHeight.value = characterHeight;
+inputMass.value = characterMass;
 
-
-    $.getJSON(characterUrl, function(data) {
-
-      var characterHomeworld = data.homeworld;
-      console.log(characterHomeworld);
-
-    });
-  }
-
-  // agarrar el selected index y pasarlo a la url para bajar la info
-  // var characterUrl = data.homeworld;
 }
