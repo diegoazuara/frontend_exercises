@@ -33,14 +33,26 @@ body {
   display: grid;
   width: 100%;
   height: 100vh;
-  background: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/star-wars-death-star-wallpaper-thats-no-moon.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
   justify-content: center;
   grid-gap: 0px;
   grid-template-columns: 25% 50% 25%;
+}
+
+/* Needed if not page will lag */
+
+.wrapper::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/star-wars-death-star-wallpaper-thats-no-moon.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  will-change: transform;
+  z-index: -1;
 }
 
 .header__btn {
@@ -158,7 +170,7 @@ li a:hover {
   color: #ddd;
 }
 
-.section-light {
+.section--light {
   background-color: #f4f4f4;
   color: #666;
 }
