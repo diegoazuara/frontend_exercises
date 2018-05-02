@@ -2,48 +2,51 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Star Wars Character Enciclopedia</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/rest_api_lp.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 </head>
 
 <body>
-  <header>
 
+  <div class="header container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Star_Wars_Yellow_One_Line_Logo.svg" alt="" class="logo">
+    <button class="header__btn"><i class="fa fa-bars"></i></button>
     <div class="navbar">
-      <div class="container">
-
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Star_Wars_Yellow_One_Line_Logo.svg" alt="">
-        <ul>
-          <li><a class="active" href="#home">Home</a></li>
-          <li><a href="#news">News</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
     </div>
-  </header>
+  </div>
+
 
   <div class="wrapper">
     <div class="box">
 
-      <!-- Agregar text shadow -->
-      <span class="title">Character Enciclopedia</span>
-      <div class="container-subtitle">
-        <span class="subtitle">Discover the star wars universe in a simple click</span>
-
+      <div class="container-title">
+        <span class="title">STAR WARS ENCICLOPEDIA</span>
       </div>
 
-      <button type="button" name="button" class="btn--primary">BROWSE</button>
+      <div class="container-subtitle">
+        <span class="subtitle">Discover anything you want with a simple click</span>
+      </div>
 
+      <div class="container-button">
+        <button type="button" name="button" class="btn--primary">BROWSE</button>
+      </div>
     </div>
-
   </div>
 
-
+  <script src="scripts/rest_api_lp.js"></script>
 </body>
 
 </html>

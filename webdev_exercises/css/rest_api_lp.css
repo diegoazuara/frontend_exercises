@@ -3,70 +3,110 @@ body {
   background-image: url("/img/death-star-wallpaper.jpg");
 }
 
-header {
-  vertical-align: middle;
+.container {
+  margin: 0 auto;
+  width: 100%;
+  background: #000;
+  position: fixed;
+  box-shadow: -2px -7px 47px 9px rgba(0,0,0,0.35);
+}
+
+.header{
+  grid-area: header;
 }
 
 .navbar {
-  background-color: #000;
-  height: 100px;
-  width: 100%;
-  position: fixed;
+  float: right;
+  padding-right: 5%;
 }
 
-.container {
-  content: border-box;
-  background-color: #000;
+.logo {
   display: inline-block;
-  margin-top: 25px;
-  margin-right: 100px;
-  margin-left: 100px;
-  width: 100%;
+  height: 50px;
+  width: 300px;
+  float: left;
+  padding: 10px 0;
+  padding-left: 5%;
 }
 
 .wrapper {
   display: grid;
-  background: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/star-wars-death-star-wallpaper-thats-no-moon.jpg");
-  background-size: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 25% 50% 25%;
   grid-gap: 0px;
-  color: #fbdd2c;
-  justify-content: center;
+  background: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/star-wars-death-star-wallpaper-thats-no-moon.jpg");
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
   width: 100vw;
   height: 100vh;
+  justify-content: center;
+}
+
+.header__btn{
+  margin: 0 auto;
+  float: right;
+  background: black;
+  color: #ffffff;
+  border: none;
+  font-size: 25px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 10%;
+  margin-top: 16px;
+  border-radius: 5px;
+  outline: none;
+  display: none;
 }
 
 .box {
+  box-sizing: border-box;
   grid-column-start: 2;
   text-align: center;
-  color: white;
-  margin: 300px 0px;
+  align-self: center;
+  width:100%;
+  color: #fff;
+}
+
+.container-title{
+margin: 0 auto;
+width: 100%;
+}
+
+.container-subtitle{
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.container-button{
+  margin: 0 auto;
+  width: 100%;
 }
 
 .title {
-  font-size: 60px;
+  font-size: 2.5em;
   text-shadow: 4px 6px #000;
 }
 
-.container-subtitle {
-  padding-top: 20px;
-  padding-bottom: 60px;
-}
-
 .subtitle {
-  font-size: 26px;
+  font-size: 1.7em;
   width: 100%;
   text-shadow: 2px 3px #000;
 }
 
+.subtitle {
+
+}
+
 .btn--primary {
-  background-color: transparent;
-  height: 60px;
+  background-color: black;
+  height: 50px;
   width: 150px;
-  font-size: 20px;
+  font-size: 1.5em;
   font-family: 'Gugi', cursive;
   color: #fff;
-  border-radius: 15px;
+  border-radius: 25px;
   border: 2px #fff;
   border-style: solid;
   padding: 10px 15px;
@@ -75,33 +115,66 @@ header {
   cursor: pointer;
 }
 
-header img {
-  display: inline-block;
-  vertical-align: middle;
-  float: left;
-  height: 50px;
-}
 
 ul {
   list-style-type: none;
-  margin: auto;
-  overflow: auto;
+  margin: 0 auto;
   text-align: right;
-  padding-right: 200px;
+  transition: max-height 0.5s ease-in-out;
+  overflow: hidden;
 }
 
 li {
   display: inline-block;
+  margin-left: 30px;
+  margin-top: 26px;
 }
 
 li a {
   display: block;
   color: white;
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111;
+@media screen and (max-width: 768px){
+
+  .logo{
+    width: 200px;
+  }
+
+    .header__btn{
+        display: inline;
+    }
+
+    .navbar{
+        padding-right: 0;
+        float: none;
+    }
+
+    ul{
+        background: #000;
+        width: 100%;
+        padding: 0px;
+        max-height: 0;
+
+    }
+
+    li{
+          box-sizing: border-box;
+          width: 100%;
+          padding: 15px;
+          margin-left:0px;
+          margin-top: 0px;
+    }
+
+    li a {
+      color: white;
+    }
+
+    .show{
+        max-height: 500px;
+        transition: max-height 0.5s ease-in-out;
+    }
+
 }
