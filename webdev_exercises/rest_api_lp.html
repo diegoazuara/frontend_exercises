@@ -13,6 +13,13 @@
   <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 </head>
 
+<!-- http://cryptap.dttheme.com/
+
+Add css animations to text and images
+
+https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2dbc55
+-->
+
 <body>
 
   <div class="header container">
@@ -30,7 +37,7 @@
 
 
   <div class="wrapper">
-    <div class="box">
+    <div class="box fadeInLeft">
 
       <div class="container-title">
         <span class="title">STAR WARS ENCICLOPEDIA</span>
@@ -48,16 +55,31 @@
 
 
   <section class="section section--dark">
-    <span class="section__title">Section One</span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente
-      labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis voluptatem
-      doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus. Laborum ad
-      temporibus ex, omnis!
-    </p>
+
+    <div class="grid__section-1">
+
+      <div class="section--left hidden-fade_in_left">
+        <img src="img/star_wars.png" class="img-enciclopedia" alt="">
+      </div>
+
+      <div class="section--right hidden-fade_in">
+        <span class="section__title">Discover the Star Wars universe!</span>
+        <div class="section__text">
+          <span class="">
+          Welcome to the most comprehensive map of the Star Wars galaxy, featuring planets from the Original Trilogy, Prequel Trilogy, The Force Awakens, The Last Jedi, Rogue One, The Clone Wars, Rebels, and Solo. You can use this page to browse and explore the
+          galaxy and find links to Wookieepedia articles about the locations. If you’re looking for a specific planet and can’t find it here, try using the search page. If you notice something that’s missing or incorrect on the map, send me an email through
+          the contact form.</span>
+        </div>
+        <div class="container-button">
+          <button type="button" name="button" class="btn btn--secondary">BROWSE</button>
+        </div>
+      </div>
+
+    </div>
+
   </section>
 
-  <div class="img1">
+  <div name="image" class="img1">
     <div class="ptext">
       <!--  <span class="border trans">
         Image Two Text
@@ -66,14 +88,17 @@
   </div>
 
   <section class="section section--light">
-    <span class="section__title">Section Two</span>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente
-      labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis voluptatem
-      doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus. Laborum ad
-      temporibus ex, omnis!
-    </p>
+    <div class="hidden-fade_in">
+      <span class="section__title">Section Two</span>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente
+        labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis
+        voluptatem doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus.
+        Laborum ad temporibus ex, omnis!
+      </p>
+    </div>
   </section>
+
 
   <div class="img2">
     <div class="ptext">

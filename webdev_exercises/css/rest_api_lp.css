@@ -8,11 +8,7 @@ body {
   width: 100%;
   margin: 0 auto;
   background: #000;
-  box-shadow: -2px -7px 47px 9px rgba(0, 0, 0, 0.35);
-}
-
-.header {
-  grid-area: header;
+  box-shadow: 0px 0px 13px 9px rgba(0, 0, 0, 0.35);
 }
 
 .navbar {
@@ -38,16 +34,12 @@ body {
   grid-template-columns: 25% 50% 25%;
 }
 
-/* Needed if not page will lag */
-
 .wrapper::before {
   content: "";
   position: fixed;
   width: 100%;
   height: 100vh;
-  top: 0;
-  left: 0;
-  background-image: url("https://topbackgroundwallpaper.com/wp-content/uploads/2018/01/star-wars-death-star-wallpaper-thats-no-moon.jpg");
+  background-image: url("../img/star_wars_1.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -99,7 +91,7 @@ body {
 
 .title {
   text-shadow: 0px 6px 8px #000;
-  font-size: 2.5em;
+  font-size: 3.5em;
 }
 
 .subtitle {
@@ -116,7 +108,6 @@ body {
   padding: 10px 15px;
   border-radius: 25px;
   outline: none;
-  box-shadow: 0px 3px 4px #000;
   cursor: pointer;
 }
 
@@ -127,10 +118,30 @@ body {
   background-color: black;
   font-family: 'Gugi', cursive;
   font-size: 1.5em;
+  transition-duration: 0.2s;
+  box-shadow: 0px 3px 4px #000;
+}
+
+.btn--secondary {
+  color: #ddd;
+  border: 2px #fff;
+  border-style: solid;
+  background-color: rgba(0, 0, 0, 0.0);
+  font-family: 'Gugi', cursive;
+  font-size: 1.5em;
+  transition-duration: 0.2s;
 }
 
 .btn--primary:hover {
-  color: #ffe81f;
+  color: #000;
+  background-color: white;
+  transition-duration: 0.2s;
+}
+
+.btn--secondary:hover {
+  color: #000;
+  background-color: white;
+  transition-duration: 0.2s;
 }
 
 ul {
@@ -158,11 +169,19 @@ li a:hover {
   color: #ffe81f;
 }
 
+.grid__section-1 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  align-items: center;
+}
+
 .section {
   margin: 0 auto;
-  padding: 50px 80px;
+  padding: 50px 250px;
   text-align: center;
   line-height: 1.8em;
+  box-shadow: 0px 0px 35px 9px rgba(0, 0, 0, 0.61);
+  z-index: 1;
 }
 
 .section--dark {
@@ -175,29 +194,93 @@ li a:hover {
   color: #666;
 }
 
+.section--right {
+  text-align: left;
+}
+
+.section--left {
+  text-align: center;
+  float: right;
+}
+
 .section__title {
-  font-size: 2em;
+  font-size: 2.5em;
+}
+
+.section__text {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.img-enciclopedia {
+  box-shadow: -5px 5px rgba(0, 0, 0, 0.4), -10px 10px rgba(0, 0, 0, 0.3), -15px 15px rgba(0, 0, 0, 0.2), -20px 20px rgba(0, 0, 0, 0.1), -25px 25px rgba(0, 0, 0, 0.05);
+  /*box-shadow: 0px 0px 0px 5px rgba(0, 0, 0, 0.4), 0px 0px 0px 10px rgba(0, 0, 0, 0.3), 0px 0px 0px 15px rgba(0, 0, 0, 0.2), 0px 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 0px 0px 25px rgba(0, 0, 0, 0.05);*/
+  height: 700px;
 }
 
 .img1, .img2 {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   /*
     fixed = parallax
     scroll = normal
   */
   background-attachment: fixed;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
 }
 
 .img1 {
-  background-image: url('https://www.laguiadelvaron.com/wp-content/uploads/2015/12/starwars-1.jpg');
+  background-image: url("../img/star_wars_2.jpg");
   min-height: 400px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
+.img1::before {}
+
 .img2 {
-  background-image: url('https://i.imgur.com/fiKu58y.jpg');
+  background-image: url('../img/star_wars_3.jpg');
   min-height: 400px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.img2::before {}
+
+.fadeInLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 1.5s;
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 2s;
+}
+
+.hidden-fade_in_left, .hidden-fade_in {
+  opacity: 0;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 768px) {
