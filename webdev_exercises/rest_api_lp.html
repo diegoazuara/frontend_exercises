@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="css/rest_api_lp.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="scripts/jquery.localScroll.js"></script>
+  <script src="scripts/jquery.scrollTo.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
 </head>
 
@@ -18,25 +20,40 @@
 Add css animations to text and images
 
 https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2dbc55
+
+boton help, quitar boton show info , info cuando seleccionas del dropdown
+
+quitar console logs
+
+como utilize el api, con que AJAX, lo que aprendi 
+
+boton en header
+
+background app
+
+boton estilo disabled
 -->
 
 <body>
 
   <div class="header container">
+
     <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Star_Wars_Yellow_One_Line_Logo.svg" alt="" class="logo">
     <button class="header__btn"><i class="fa fa-bars"></i></button>
+
     <div class="navbar">
-      <ul>
+      <ul id="nav">
         <li><a href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about_us">About Us</a></li>
+        <li><a href="#follow_us">Follow Us</a></li>
       </ul>
     </div>
+
   </div>
 
 
-  <div class="wrapper">
+  <div class="wrapper" id="home">
     <div class="box fadeInLeft">
 
       <div class="container-title">
@@ -48,13 +65,13 @@ https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2d
       </div>
 
       <div class="container-button">
-        <button type="button" name="button" class="btn btn--primary">BROWSE</button>
+        <a href="REST_API.html" name="button" class="btn btn--primary">BROWSE</a>
       </div>
+
     </div>
   </div>
 
-
-  <section class="section section--dark">
+  <section class="section section--dark" id="features">
 
     <div class="grid__section-1">
 
@@ -64,20 +81,26 @@ https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2d
 
       <div class="section--right hidden-fade_in">
         <span class="section__title">Discover the Star Wars universe!</span>
-        <div class="section__text">
-          <span class="">
-          Welcome to the most comprehensive map of the Star Wars galaxy, featuring planets from the Original Trilogy, Prequel Trilogy, The Force Awakens, The Last Jedi, Rogue One, The Clone Wars, Rebels, and Solo. You can use this page to browse and explore the
-          galaxy and find links to Wookieepedia articles about the locations. If you’re looking for a specific planet and can’t find it here, try using the search page. If you notice something that’s missing or incorrect on the map, send me an email through
-          the contact form.</span>
+
+        <div class="container__section_text">
+          <div class="section__text">
+            <span class="">
+    Welcome to the most comprehensive enciclopedia of the Star Wars galaxy, featuring characters from the Original Trilogy, Prequel Trilogy, The Force Awakens, The Last Jedi, Rogue One, The Clone Wars, Rebels, and Solo. You can use this application to browse and explore the
+    characters and learn more about them. </span>
+          </div>
         </div>
+
+
         <div class="container-button">
-          <button type="button" name="button" class="btn btn--secondary">BROWSE</button>
+          <a href="REST_API.html" name="button" class="btn btn--secondary">BROWSE</a>
         </div>
+
       </div>
 
     </div>
 
   </section>
+
 
   <div name="image" class="img1">
     <div class="ptext">
@@ -87,15 +110,15 @@ https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2d
     </div>
   </div>
 
-  <section class="section section--light">
+  <section class="section section--light" id="about_us">
     <div class="hidden-fade_in">
-      <span class="section__title">Section Two</span>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, laudantium, quibusdam? Nobis, delectus, commodi, fugit amet tempora facere dolores nisi facilis consequatur, odio hic minima nostrum. Perferendis eos earum praesentium, blanditiis sapiente
-        labore aliquam ipsa architecto vitae. Minima soluta temporibus voluptates inventore commodi cumque esse suscipit optio aliquam et, dolorem a cupiditate nihil fuga laboriosam fugiat placeat dignissimos! Unde eveniet placeat quisquam blanditiis
-        voluptatem doloremque fugiat dolor repellendus ratione in. Distinctio provident dolorem modi cumque illo enim quidem tempora deserunt nostrum voluptate labore repellat quisquam quasi cum suscipit dolore ab consequuntur, ad porro earum temporibus.
-        Laborum ad temporibus ex, omnis!
-      </p>
+      <span class="section__title">About Us</span><br><br>
+      <div class="container__section_text">
+        <span class="section__text">
+        We are a group of fans really passionate about Star Wars. We decided to build this online encyclopedia using the Star Wars API which is the world's first quantified and programmatically-formatted set of Star Wars data. After hours of watching films we
+        present to you all the People, Films, Species, Starships, Vehicles and Planets from Star Wars. We've formatted this data in JSON and exposed it to you in a RESTish implementation that allows you to programmatically collect and measure the data.
+      </span>
+      </div>
     </div>
   </section>
 
@@ -107,6 +130,27 @@ https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2d
       </span> -->
     </div>
   </div>
+
+  <section class="section section--dark" id="follow_us">
+    <div class="grid__section-2">
+      <div class="section--left hidden-light_speed_in">
+        <img src="img/bb8_approves.png" class="img-bb8" alt="">
+      </div>
+      <div class="section--right hidden-fade_in">
+        <span class="section__title">Follow us on social media!</span>
+        <div class="section__text">
+          <div class="social-icons">
+            <ul>
+              <li><a href="https://www.facebook.com/StarWars/"><i class="fa fa-facebook-square" aria-hidden="true"></i> </a></li>
+              <li><a href="https://www.instagram.com/starwars/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li><a href="https://twitter.com/starwars"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+              <li class="youtube"><a href="https://www.youtube.com/starwars"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <script src="scripts/rest_api_lp.js"></script>
