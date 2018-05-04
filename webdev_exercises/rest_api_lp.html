@@ -17,13 +17,11 @@
 
 <!-- http://cryptap.dttheme.com/
 
-Add css animations to text and images
-
 https://medium.com/vehikl-news/fixed-background-image-performance-issue-6b7d9e2dbc55
 
 boton help, quitar boton show info , info cuando seleccionas del dropdown
 
-quitar console logs
+quitar console logs x
 
 como utilize el api, con que AJAX, lo que aprendi
 
@@ -38,12 +36,10 @@ documentar el codigo
 
 <body>
 
-  <div class="header container">
-
-    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Star_Wars_Yellow_One_Line_Logo.svg" alt="" class="logo">
+  <div class="header">
+    <img class="header__logo" src="https://upload.wikimedia.org/wikipedia/commons/f/fb/Star_Wars_Yellow_One_Line_Logo.svg" alt="logo">
     <button class="header__btn"><i class="fa fa-bars"></i></button>
-
-    <div class="navbar">
+    <div class="header__navbar">
       <ul id="nav">
         <li><a href="#home">Home</a></li>
         <li><a href="#features">Features</a></li>
@@ -51,109 +47,86 @@ documentar el codigo
         <li><a href="#follow_us">Follow Us</a></li>
       </ul>
     </div>
-
   </div>
 
 
-  <div class="wrapper" id="home">
-    <div class="box fadeInLeft">
-
+  <div class="home-section" id="home">
+    <div class="home-section__box fadeInLeft">
       <div class="container-title">
-        <span class="title">STAR WARS ENCICLOPEDIA</span>
+        <span class="home-section__title">STAR WARS ENCICLOPEDIA</span>
       </div>
-
       <div class="container-subtitle">
-        <span class="subtitle">Discover anything you want with a simple click</span>
+        <span class="home-section__subtitle">Discover anything you want with a simple click</span>
       </div>
-
       <div class="container-button">
         <a href="REST_API.html" name="button" class="btn btn--primary">BROWSE</a>
       </div>
-
     </div>
   </div>
 
   <section class="section section--dark" id="features">
+    <div class="features-grid">
 
-    <div class="grid__section-1">
-
-      <div class="section--left hidden-fade_in_left">
+      <div class="left-column hidden-fade_in_left">
         <img src="img/star_wars.png" class="img-enciclopedia" alt="">
       </div>
 
-      <div class="section--right hidden-fade_in">
+      <div class="right-column hidden-fade_in">
         <span class="section__title">Discover the Star Wars universe!</span>
-
-        <div class="container__section_text">
+        <div class="container-section__text">
           <div class="section__text">
             <span class="">
-    Welcome to the most comprehensive enciclopedia of the Star Wars galaxy, featuring characters from the Original Trilogy, Prequel Trilogy, The Force Awakens, The Last Jedi, Rogue One, The Clone Wars, Rebels, and Solo. You can use this application to browse and explore the
+    Welcome to the most comprehensive enciclopedia of the Star Wars galaxy, featuring characters from the Original Trilogy, Prequel Trilogy, and The Force Awakens. You can use this application to browse and explore the
     characters and learn more about them. </span>
           </div>
         </div>
-
-
         <div class="container-button">
           <a href="REST_API.html" name="button" class="btn btn--secondary">BROWSE</a>
         </div>
-
       </div>
 
     </div>
-
   </section>
 
 
-  <div name="image" class="img1">
-    <div class="ptext">
-      <!--  <span class="border trans">
-        Image Two Text
-      </span> -->
-    </div>
+  <div class="img1">
   </div>
 
   <section class="section section--light" id="about_us">
     <div class="hidden-fade_in">
       <span class="section__title">About Us</span><br><br>
-      <div class="container__section_text">
+      <div class="container-section__text">
         <span class="section__text">
-        We are a group of fans really passionate about Star Wars. We decided to build this online encyclopedia using the Star Wars API which is the world's first quantified and programmatically-formatted set of Star Wars data. After hours of watching films we
-        present to you all the People, Films, Species, Starships, Vehicles and Planets from Star Wars. We've formatted this data in JSON and exposed it to you in a RESTish implementation that allows you to programmatically collect and measure the data.
+        We are a group of fans really passionate about Star Wars.  After hours of watching films we
+        came to the conclusion that there must be a fast and easy way to learn more about all the characters. On 2018 we finally decided to build this online encyclopedia using the Star Wars API which is the world's first quantified and programmatically-formatted set of Star Wars data. Our future plans include not only People but Films, Species, Starships, Vehicles and Planets from Star Wars.
       </span>
       </div>
     </div>
   </section>
 
-
   <div class="img2">
-    <div class="ptext">
-      <!--  <span class="border trans">
-        Image Two Text
-      </span> -->
-    </div>
   </div>
 
   <section class="section section--dark" id="follow_us">
-    <div class="grid__section-2">
-      <div class="section--left hidden-light_speed_in">
+    <div class="follow_us-grid">
+      <div class="left-column hidden-light_speed_in">
         <img src="img/bb8_approves.png" class="img-bb8" alt="">
       </div>
-      <div class="section--right hidden-fade_in">
+      <div class="right-column hidden-fade_in">
         <span class="section__title">Follow us on social media!</span>
         <div class="section__text">
-          <div class="social-icons">
+          <div class="section__social-icons">
             <ul>
               <li><a href="https://www.facebook.com/StarWars/"><i class="fa fa-facebook-square" aria-hidden="true"></i> </a></li>
               <li><a href="https://www.instagram.com/starwars/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
               <li><a href="https://twitter.com/starwars"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-              <li class="youtube"><a href="https://www.youtube.com/starwars"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.youtube.com/starwars"><i class="fa fa-youtube-square" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <script src="scripts/rest_api_lp.js"></script>
 </body>

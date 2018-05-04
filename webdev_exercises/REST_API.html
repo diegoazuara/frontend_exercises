@@ -4,11 +4,12 @@
 <head lang="en">
   <meta charset="UTF-8">
   <title>Rest API</title>
-
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/rest_api.css">
   <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+  <link rel="stylesheet" href="css/rest_api.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 </head>
 
 <body>
@@ -33,17 +34,37 @@ https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Res
 https://www.google.com/drive/
 
  -->
-
-  <!-- Write your code here -->
+  <div class="button-section">
+    <button type="button" class="btn btn--primary more-info z-index_above" id="showBtn" name="button">MORE INFO</button>
+    <button type="button" class="btn btn--primary home-page z-index_above" id="homePageBtn" name="button">HOME PAGE</button>
+  </div>
 
   <div class="wrapper">
     <div class="box">
+      <div class="container-more-info">
+        <img src="https://vignette.wikia.nocookie.net/disney/images/2/21/Star_Wars_logo.png/revision/latest?cb=20170909202326">
+
+        <div class="container-text">
+          <span class="text-style">The Star Wars Character Enciclopedia uses asynchronous HTTP (<a  class="url" href="http://api.jquery.com/jquery.ajax/">Ajax</a>) request, it loads data from SWAPI (<a href="https://swapi.co/">Star Wars Api</a>) using a HTTP GET request. The Star Wars API is the world's first quantified and programmatically-formatted set of Star Wars data.
+It contains all the People, Films, Species, Starships, Vehicles and Planets from Star Wars. The data is formatted in JSON and exposed in a RESTish implementation that allows you to programmatically collect and measure the data. </span>
+          <p><span class="text-style">This app also uses JavaScript promises. Promises provide a clean, flexible way to chain multiple async operations together without having to nest function calls inside callbacks. Promises where used to handle errors, and to display the HTTP status codes. If there is a connection error a alert message will appear with the status number. </span></p>
+
+        </div>
+
+        <div class="center">
+          <button type="button" class="btn btn--primary" id="goBack" name="button">GO BACK</button>
+        </div>
+
+      </div>
+
       <div class="form-container">
         <form id="regForm">
           <div class="tab">
             <div class="info">
-              <img src="https://vignette.wikia.nocookie.net/disney/images/2/21/Star_Wars_logo.png/revision/latest?cb=20170909202326"><br>
-              <span class="title"> CHARACTER ENCICLOPEDIA  </span><br>
+              <img src="https://vignette.wikia.nocookie.net/disney/images/2/21/Star_Wars_logo.png/revision/latest?cb=20170909202326">
+              <div class="container-title">
+                <span class="title"> CHARACTER ENCICLOPEDIA  </span>
+              </div>
               <!--</div>
             <div class="learn more">
               <span class="info-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
@@ -79,10 +100,6 @@ https://www.google.com/drive/
                 </div>
               </div>
         </form>
-        <div class="button-section">
-          <button type="button" class="btn--primary" id="showBtn" name="button" disabled>SHOW INFO</button>
-
-        </div>
         </div>
         </div>
       </div>

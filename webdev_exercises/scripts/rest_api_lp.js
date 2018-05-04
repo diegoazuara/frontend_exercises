@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('.header__btn').on('click', function() {
-    $('.container ul').toggleClass('show');
+    $('.header ul').toggleClass('show');
   });
 
   var offset = function() {
@@ -33,8 +33,6 @@ var animateHTMLFadeInLeft = function() {
     for (var i = 0; i < elems.length; i++) {
       var posFromTop = elems[i].getBoundingClientRect().top
       if (posFromTop - windowHeight <= 0) {
-
-        console.log(elems);
         elems[i].className = elems[i].className.replace('hidden-fade_in_left', 'fadeInLeft')
       }
     }
@@ -61,8 +59,6 @@ var animateHTMLFadeIn = function() {
     for (var i = 0; i < elems.length; i++) {
       var posFromTop = elems[i].getBoundingClientRect().top
       if (posFromTop - windowHeight <= 0) {
-
-        console.log(elems);
         elems[i].className = elems[i].className.replace('hidden-fade_in', 'fadeIn')
       }
     }
@@ -89,8 +85,6 @@ var animateHTMLLightSpeedIn = function() {
     for (var i = 0; i < elems.length; i++) {
       var posFromTop = elems[i].getBoundingClientRect().top
       if (posFromTop - windowHeight <= 0) {
-
-        console.log(elems);
         elems[i].className = elems[i].className.replace('hidden-light_speed_in', 'lightSpeedIn')
       }
     }

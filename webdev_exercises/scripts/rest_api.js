@@ -16,6 +16,36 @@ defaultOptionCharacter.text = 'Choose Character...';
 dropdownCharacters.add(defaultOptionCharacter);
 dropdownCharacters.selectedIndex = 0;
 
+var inputHomeworld = document.getElementById("homeworld");
+var inputBirthYear = document.getElementById("birth_year");
+var inputGender = document.getElementById("gender");
+var inputHairColor = document.getElementById("hair_color");
+var inputHeight = document.getElementById("height");
+var inputMass = document.getElementById("mass");
+
+$("input").attr('readonly', true);
+
+// Displays more information about the app
+var showBtn = document.getElementById("showBtn");
+showBtn.addEventListener("click", function() {
+  $("#showBtn").hide();
+  $(".form-container").hide();
+  $('.container-more-info').show();
+});
+
+var homePageBtn = document.getElementById("homePageBtn");
+homePageBtn.addEventListener("click", function() {
+  window.location = "rest_api_lp.html";
+})
+
+// ...Go back to the app
+var goBack = document.getElementById("goBack");
+goBack.addEventListener("click", function() {
+  $("#showBtn").show();
+  $(".container-more-info").hide();
+  $(".form-container").show();
+});
+
 
 var promise = new Promise(function(resolve, reject) {
   // Perform an asynchronous HTTP (Ajax) request inside a JavaScript promise.
@@ -30,8 +60,6 @@ var promise = new Promise(function(resolve, reject) {
         xhr: xhr
 
       }
-
-      console.log(data);
       //Passes the object to the resolve function
       resolve(object);
     },
@@ -49,12 +77,10 @@ var promise = new Promise(function(resolve, reject) {
 promise.then(function(object) {
   // Success
   addFilms(object.data);
-  alert("Status: " + object.xhr.status);
 
 }).catch(function(error) {
   //Error
   alert("Error: " + error);
-
 })
 
 function addFilms(data) {
@@ -77,8 +103,17 @@ function addFilms(data) {
     dropdownCharacters.length = 0;
     var defaultOptionCharacter = document.createElement('option');
     defaultOptionCharacter.text = 'Choose Character...';
-
     dropdownCharacters.add(defaultOptionCharacter);
+
+    //...and character information fields will become empty
+    inputHomeworld.value = "";
+    inputBirthYear.value = "";
+    inputGender.value = "";
+    inputHairColor.value = "";
+    inputHeight.value = "";
+    inputMass.value = "";
+
+    $('input').prop('disabled', true);
 
 
     var value = $('#star_wars-films option:selected').val();
@@ -102,13 +137,6 @@ function showCharacters(data, value) {
   var selectedOption = document.getElementById("star_wars-characters");
   selectedOption.addEventListener("change", function() {
 
-    var inputHomeworld = document.getElementById("homeworld");
-    var inputBirthYear = document.getElementById("birth_year");
-    var inputGender = document.getElementById("gender");
-    var inputHairColor = document.getElementById("hair_color");
-    var inputHeight = document.getElementById("height");
-    var inputMass = document.getElementById("mass");
-
     inputHomeworld.value = "";
     inputBirthYear.value = "";
     inputGender.value = "";
@@ -118,20 +146,10 @@ function showCharacters(data, value) {
 
     if (selectedOption.selectedIndex > 0) {
 
-      console.log("enabled")
-      $('#showBtn').prop('disabled', false);
       $('input').prop('disabled', false);
-
-      var showBtn = document.getElementById("showBtn");
-      showBtn.addEventListener("click", function() {
-
-        showInfo();
-
-      });
+      showInfo();
 
     } else {
-      console.log("disabled")
-      $('#showBtn').prop('disabled', true);
       $('input').prop('disabled', true);
     }
 
@@ -199,7 +217,7 @@ function showInfo() {
   var inputHeight = document.getElementById("height");
   var inputMass = document.getElementById("mass");
 
-  //Changes the value of the inputs 
+  //Changes the value of the inputs
   inputHomeworld.value = characterHomeworld;
   inputBirthYear.value = characterBirthYear;
   inputGender.value = characterGender;
